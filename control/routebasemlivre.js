@@ -3,8 +3,8 @@ const request = require('request');
 
 function requestMercado (search, limit){        
     return new Promise((resolve, reject)=>{
-        let count =1;
-        let url = 'https://lista.mercadolivre.com.br/'+search;
+        let count =1;        
+        let url = 'https://lista.mercadolivre.com.br/'+search.replace(' ','-');
         request(url, (error, response, body) => {
             if(error && response.statusCode !== 200){ 
                 message = {
